@@ -137,7 +137,8 @@ Item {
     }
     Text {
       id: errorMessage
-      font.pixelSize: 10
+      font.italic: true
+      font.pointSize: config.FontSize
     }
   }
   Connections {
