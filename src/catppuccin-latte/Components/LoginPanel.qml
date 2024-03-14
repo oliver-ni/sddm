@@ -61,79 +61,85 @@ Item {
         onAccepted: loginButton.clicked()
       }
     }
-    Button {
-      id: loginButton
-      height: inputHeight
+    Column {
+      spacing: 8
       width: parent.width
-      enabled: user != "" && password != "" ? true : false
-      hoverEnabled: true
-      contentItem: Text {
-        id: buttonText
-        renderType: Text.NativeRendering
-        font {
-          family: config.Font
-          pointSize: config.FontSize
-          bold: true
+      Button {
+        id: loginButton
+        height: inputHeight
+        width: parent.width
+        enabled: user != "" && password != "" ? true : false
+        hoverEnabled: true
+        contentItem: Text {
+          id: buttonText
+          renderType: Text.NativeRendering
+          font {
+            family: config.Font
+            pointSize: config.FontSize
+            bold: true
+          }
+          horizontalAlignment: Text.AlignHCenter
+          verticalAlignment: Text.AlignVCenter
+          color: config.crust
+          text: "Login"
         }
-        horizontalAlignment: Text.AlignHCenter
-        verticalAlignment: Text.AlignVCenter
-        color: config.crust
-        text: "Login"
-      }
-      background: Rectangle {
-        id: buttonBackground
-        color: "#254a8a"
-        radius: 3
-      }
-      states: [
-        State {
-          name: "pressed"
-          when: loginButton.down
-          PropertyChanges {
-            target: buttonBackground
-            color: config.teal
+        background: Rectangle {
+          id: buttonBackground
+          color: "#254a8a"
+          radius: 3
+        }
+        states: [
+          State {
+            name: "pressed"
+            when: loginButton.down
+            PropertyChanges {
+              target: buttonBackground
+              color: config.teal
+            }
+            PropertyChanges {
+              target: buttonText
+            }
+          },
+          State {
+            name: "hovered"
+            when: loginButton.hovered
+            PropertyChanges {
+              target: buttonBackground
+              color: config.teal
+            }
+            PropertyChanges {
+              target: buttonText
+            }
+          },
+          State {
+            name: "enabled"
+            when: loginButton.enabled
+            PropertyChanges {
+              target: buttonBackground
+            }
+            PropertyChanges {
+              target: buttonText
+            }
           }
-          PropertyChanges {
-            target: buttonText
-          }
-        },
-        State {
-          name: "hovered"
-          when: loginButton.hovered
-          PropertyChanges {
-            target: buttonBackground
-            color: config.teal
-          }
-          PropertyChanges {
-            target: buttonText
-          }
-        },
-        State {
-          name: "enabled"
-          when: loginButton.enabled
-          PropertyChanges {
-            target: buttonBackground
-          }
-          PropertyChanges {
-            target: buttonText
+        ]
+        transitions: Transition {
+          PropertyAnimation {
+            properties: "color"
+            duration: 300
           }
         }
-      ]
-      transitions: Transition {
-        PropertyAnimation {
-          properties: "color"
-          duration: 300
+        onClicked: {
+          errorMessage.text = ""
+          sddm.login(user, password, session)
         }
       }
-      onClicked: {
-        sddm.login(user, password, session)
+      Text {
+        id: errorMessage
+        text: ""
+        color: config.red
+        font.italic: true
+        font.pointSize: config.FontSize
       }
-    }
-    Text {
-      id: errorMessage
-      color: config.red
-      font.italic: true
-      font.pointSize: config.FontSize
     }
   }
   Connections {
