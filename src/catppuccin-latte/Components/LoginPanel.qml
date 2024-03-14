@@ -40,6 +40,7 @@ Item {
       horizontalCenter: parent.horizontalCenter
     }
     Image {
+      anchors.horizontalCenter: parent.horizontalCenter
       height: Screen.width * 0.05
       width: Screen.width * 0.05
       fillMode: Image.PreserveAspectFit
@@ -47,6 +48,7 @@ Item {
     }
     Column {
       spacing: 8
+      width: parent.width
       UserField {
         id: userField
         height: inputHeight
