@@ -62,7 +62,7 @@ Item {
       }
     }
     Column {
-      spacing: 8
+      spacing: 16
       width: parent.width
       Button {
         id: loginButton
@@ -129,13 +129,13 @@ Item {
           }
         }
         onClicked: {
-          errorMessage.text = ""
+          errorMessage.text = " "
           sddm.login(user, password, session)
         }
       }
       Text {
         id: errorMessage
-        text: ""
+        text: " "
         color: config.red
         font.italic: true
         font.pointSize: config.FontSize
