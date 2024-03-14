@@ -58,7 +58,7 @@ Item {
     }
     Image {
       width: Screen.width * 0.05
-      source: config.logo
+      source: config.Logo
     }
     UserField {
       id: userField
