@@ -13,7 +13,7 @@ Item {
       source: Qt.resolvedUrl("../icons/power.svg")
       height: height
       width: width
-      color: config.crust
+      color: "#254a8a"
     }
     background: Rectangle {
       id: powerButtonBackground
