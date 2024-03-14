@@ -13,7 +13,6 @@ TextField {
   font {
     family: config.Font
     pointSize: config.FontSize
-    bold: true
   }
   color: config.text
   horizontalAlignment: Text.AlignHCenter
