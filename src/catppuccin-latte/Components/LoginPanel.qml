@@ -24,23 +24,6 @@ Item {
     spacing: 8
     anchors {
       bottom: parent.bottom
-      left: parent.left
-    }
-    PowerButton {
-      id: powerButton
-    }
-    RebootButton {
-      id: rebootButton
-    }
-    SleepButton {
-      id: sleepButton
-    }
-    z: 5
-  }
-  Column {
-    spacing: 8
-    anchors {
-      bottom: parent.bottom
       right: parent.right
     }
     SessionPanel {
