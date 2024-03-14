@@ -49,7 +49,7 @@ Item {
     z: 5
   }
   Column {
-    spacing: 8
+    spacing: 32
     z: 5
     width: inputWidth
     anchors {
@@ -57,19 +57,24 @@ Item {
       horizontalCenter: parent.horizontalCenter
     }
     Image {
+      height: Screen.width * 0.05
       width: Screen.width * 0.05
+      fillMode: Image.PreserveAspectFit
       source: config.Logo
     }
-    UserField {
-      id: userField
-      height: inputHeight
-      width: parent.width
-    }
-    PasswordField {
-      id: passwordField
-      height: inputHeight
-      width: parent.width
-      onAccepted: loginButton.clicked()
+    Column {
+      spacing: 8
+      UserField {
+        id: userField
+        height: inputHeight
+        width: parent.width
+      }
+      PasswordField {
+        id: passwordField
+        height: inputHeight
+        width: parent.width
+        onAccepted: loginButton.clicked()
+      }
     }
     Button {
       id: loginButton
