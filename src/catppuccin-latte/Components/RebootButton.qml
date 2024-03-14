@@ -18,7 +18,7 @@ Item {
     background: Rectangle {
       id: rebootButtonBackground
       radius: 3
-      color: config.red
+      color: "#eab656"
     }
     states: [
       State {
