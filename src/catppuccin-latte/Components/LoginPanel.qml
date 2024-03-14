@@ -56,6 +56,10 @@ Item {
       verticalCenter: parent.verticalCenter
       horizontalCenter: parent.horizontalCenter
     }
+    Image {
+      width: Screen.width * 0.05
+      source: config.logo
+    }
     UserField {
       id: userField
       height: inputHeight
