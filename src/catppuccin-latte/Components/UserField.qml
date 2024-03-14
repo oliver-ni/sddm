@@ -3,6 +3,7 @@ import QtQuick.Controls 2.15
 
 TextField {
   id: userField
+  focus: true
   height: inputHeight
   width: inputWidth
   selectByMouse: true
