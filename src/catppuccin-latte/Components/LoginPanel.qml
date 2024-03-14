@@ -88,7 +88,7 @@ Item {
       }
       background: Rectangle {
         id: buttonBackground
-        color: config.sapphire
+        color: "#254a8a"
         radius: 3
       }
       states: [
@@ -137,6 +137,7 @@ Item {
     }
     Text {
       id: errorMessage
+      color: config.red
       font.italic: true
       font.pointSize: config.FontSize
     }
