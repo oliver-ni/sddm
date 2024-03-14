@@ -3,7 +3,6 @@ import QtQuick.Controls 2.15
 
 TextField {
   id: passwordField
-  focus: true
   selectByMouse: true
   placeholderText: "Password"
   echoMode: TextInput.Password
