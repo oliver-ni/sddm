@@ -135,6 +135,10 @@ Item {
         sddm.login(user, password, session)
       }
     }
+    Text {
+      id: errorMessage
+      font.pixelSize: 10
+    }
   }
   Connections {
     target: sddm
@@ -142,6 +146,7 @@ Item {
     function onLoginFailed() {
       passwordField.text = ""
       passwordField.focus = true
+      errorMessage.text = "Login failed"
     }
   }
 }
