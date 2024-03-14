@@ -26,7 +26,7 @@ Item {
       }
       background: Rectangle {
         id: sessionEntryBackground
-        color: config.surface1
+        color: sessionList.currentIndex == index ? config.surface2 : config.surface1
         radius: 3
       }
       states: [
